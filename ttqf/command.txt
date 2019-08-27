@@ -1,0 +1,2 @@
+ssh -i C:\Users\ttqf\fwwb-code\ttqf\s-e-r-v-e-r-k-e-y ubuntu@111.230.196.202
+journalctl -u fwwb-server.service

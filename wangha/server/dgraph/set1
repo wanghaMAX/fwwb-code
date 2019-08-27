@@ -1,0 +1,76 @@
+{
+set {
+_:wangha <name> "wangha" .
+_:wangha <age> "17" .
+_:wangha <from> "China" .
+_:wangha <usernameOFen> "wangha" .
+_:wangha <usernameOFcn> "王哈" .
+_:wangha <usernameOFjp> "王ハ" .
+_:wangha <friend> _:cyc .
+_:wangha <friend> _:xhe .
+
+_:cyc <name> "chenchao" .
+_:cyc <age> "18" .
+_:cyc <from> "China" .
+_:cyc <usernameOFen> "ChaoChen" .
+_:cyc <usernameOFcn> "陈超" .
+
+_:xhe <name> "xhe" .
+_:xhe <age> "18" .
+_:xhe <from> "Japan" .
+_:xhe <usernameOFcn> "x鹤" .
+
+_:cxy <name> "changyang" .
+_:cxy <age> "19" .
+_:cxy <from> "England" .
+_:cxy <usernameOFcn> "常飏" .
+_:cxy <friend> _:ttfq .
+
+_:ttfq <name> "yetao" .
+_:ttfq <age> "18" .
+_:ttfq <from> "Russian" .
+_:ttfq <usernameOFen> "TaoYe" .
+_:ttfq <usernameOFcn> "叶掏" .
+_:ttfq <friend> _:xhe .
+}
+}
+
+{
+set {
+_:yaodao <name> "yaozhao" .
+_:yaodao <age> "24" .
+_:yaodao <from> "M78Star" .
+_:yaodao <usernameOFen> "ZhaoYao" .
+_:yaodao <usernameOFcn> "姚X" .
+_:yaodao <usernameOFjp> "姚飞机" .
+_:yaodao <friend> _:wangha .
+}
+}
+
+{
+  friends(func:eq(usernameOFen,"wangwei")){
+    friend{
+      U as uid
+      usernameOFcn
+    }
+  }
+  info(func:uid(U)){
+    uid
+    name
+    usernameOFcn
+    usernameOFen
+  }
+}
+
+{
+  about(func:eq(usernameOFen,"yaosongzhao")){
+    uid    
+    friend{
+      uid
+      name
+      usernameOFcn
+      usernameOFen
+      usernameOFjp
+    }
+  }
+}

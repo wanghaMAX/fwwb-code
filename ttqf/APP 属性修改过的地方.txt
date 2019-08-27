@@ -1,0 +1,49 @@
+/android/app/src/main/AndroidManifest.xml 中的内容
+
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<application
+		<meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBbNgT-eMt0CkypNRgKLmLngUUc2G1aN5s"/>
+		android:label="中日驿"
+
+
+
+/ios/Runner/AppDelegate.m 中的内容
+
+  [GMSServices provideAPIKey:@"AIzaSyBbNgT-eMt0CkypNRgKLmLngUUc2G1aN5s"];
+
+
+/ios/Runner/Info.plist 中的内容
+
+<dict>
+	<key>io.flutter.embedded_views_preview</key>
+	<string>YES</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>此应用需要您的同意，才能在应用打开时访问位置</string>
+	<key>NSLocationUsageDescription</key>
+	<string>此应用需要您的同意，才能访问位置</string>
+	<key>CFBundleName</key>
+	<string>中日驿</string>
+
+
+
+
+Add two rows to the ios/Runner/Info.plist:
+
+<key>NSCameraUsageDescription</key>
+<string>Can I use the camera please?</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Can I use the mic please?</string>
+
+Change the minimum Android sdk version to 21 (or higher) in your android/app/build.gradle file.
+
+minSdkVersion 21
+
+AndroidManifest.xml
+
+<activity
+    android:name="com.yalantis.ucrop.UCropActivity"
+    android:screenOrientation="portrait"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
